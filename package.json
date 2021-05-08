@@ -1,0 +1,16 @@
+{
+    "name": "netflix-my-list",
+    "version": "1.0.0",
+    "description": "Gets your netflix list",
+    "type": "module",
+    "main": "index.js",
+    "author": "Ashwin Gokhale",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "chrome-cookies-secure": "^1.3.2",
+        "puppeteer": "^9.1.1"
+    }
+}
