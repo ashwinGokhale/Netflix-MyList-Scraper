@@ -33,11 +33,13 @@ const getAuthUrlHandler = (resolve) => async (res) => {
     }
 };
 
+let authHandler;
 const authUrl = await new Promise((resolve) => {
-    page.on('response', getAuthUrlHandler(resolve));
+    authHandler = getAuthUrlHandler(resolve)
+    page.on('response', authHandler);
 });
 
-page.off('response', getAuthUrlHandler);
+page.off('response', authHandler);
 
 const responseBody = await page.evaluate(async (authParam) => {
     const params = new URLSearchParams([
